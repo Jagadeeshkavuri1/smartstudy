@@ -15,6 +15,7 @@ const Login = ({ setIsAuthenticated }) => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [firebaseError, setFirebaseError] = useState('');
+  const [showForgotPasswordMessage, setShowForgotPasswordMessage] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -108,6 +109,11 @@ const Login = ({ setIsAuthenticated }) => {
     }
   };
 
+  const handleForgotPasswordClick = (e) => {
+    e.preventDefault();
+    setShowForgotPasswordMessage(true);
+  };
+
   return (
     <div className="fullscreen-container" style={{ color: '#000000' }}>
       <h1 className="black-heading" style={{ color: '#000000' }}>Student Login</h1>
@@ -119,6 +125,18 @@ const Login = ({ setIsAuthenticated }) => {
             color: '#ff0000'
           }}>
             {firebaseError}
+          </div>
+        )}
+        
+        {showForgotPasswordMessage && (
+          <div className="info-message" style={{ 
+            marginBottom: '1rem',
+            color: '#000000',
+            backgroundColor: '#f0f0f0',
+            padding: '10px',
+            borderRadius: '4px'
+          }}>
+            This feature is coming soon
           </div>
         )}
         
@@ -215,7 +233,8 @@ const Login = ({ setIsAuthenticated }) => {
           </p>
           <p className="login-link" style={{ color: '#000000' }}>
             <Link 
-              to="/forgot-password" 
+              to="#" 
+              onClick={handleForgotPasswordClick}
               style={{ 
                 color: '#000000', 
                 textDecoration: 'underline',
