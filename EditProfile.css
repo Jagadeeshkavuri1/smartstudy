@@ -1,0 +1,241 @@
+/* Full Page Layout */
+.edit-profile-page {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: #1372a1; /* Black background */
+    color: #ffffff; /* White text */
+    transition: background 0.5s ease;
+  }
+  
+  /* Main Form Container */
+  .edit-profile-card {
+    width: 100%;
+    max-width: 800px;
+    padding: 2.5rem;
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%); /* Dark gradient for card */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Light shadow for contrast */
+    color: #ffffff; /* White text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .edit-profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Form Grid Layout */
+  .edit-profile-card form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Loading State */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: #000000; /* Black background */
+    color: #ffffff; /* White text */
+  }
+  
+  .spinner {
+    border: 4px solid rgba(255, 255, 255, 0.1); /* Adjusted for black background */
+    border-radius: 50%;
+    border-top: 4px solid #4B5EAA;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Messages */
+  .error-message {
+    color: #ffffff; /* White text */
+    background-color: #d32f2f; /* Red background for error */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+  }
+  
+  .success-message {
+    color: #ffffff; /* White text */
+    background-color: #388e3c; /* Green background for success */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #ffffff; /* White text */
+    transition: color 0.3s ease;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #444; /* Darker border for contrast */
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #2d2d2d; /* Dark input background */
+    color: #ffffff; /* White text */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #4B5EAA;
+    box-shadow: 0 0 8px rgba(75, 94, 170, 0.3);
+    outline: none;
+  }
+  
+  .form-group input:hover:not(:focus) {
+    border-color: #666;
+    transform: scale(1.01);
+  }
+  
+  /* Form Actions */
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .cancel-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%); /* Dark gradient */
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #ffffff; /* White text */
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cancel-btn:hover {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+  }
+  
+  .submit-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #4B5EAA 0%, #3a4a85 100%);
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease;
+  }
+  
+  .submit-btn:hover {
+    background: linear-gradient(135deg, #3a4a85 0%, #2e3b6b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
+  
+  .submit-btn:disabled {
+    background: #666666; /* Darker gray for disabled */
+    color: #ffffff; /* White text */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Dark Mode Adjustments */
+  .dark-mode .edit-profile-page {
+    background: #000000; /* Remains black */
+  }
+  
+  .dark-mode .edit-profile-card {
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #ffffff; /* White text */
+  }
+  
+  .dark-mode .edit-profile-card:hover {
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.15);
+  }
+  
+  .dark-mode .form-group label {
+    color: #ffffff; /* White text */
+  }
+  
+  .dark-mode .form-group input {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #ffffff; /* White text */
+  }
+  
+  .dark-mode .form-group input:hover:not(:focus) {
+    border-color: #666;
+  }
+  
+  .dark-mode .cancel-btn {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+    border-color: #444;
+    color: #ffffff; /* White text */
+  }
+  
+  .dark-mode .cancel-btn:hover {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark-mode .submit-btn {
+    background: linear-gradient(135deg, #4B5EAA 0%, #3a4a85 100%);
+  }
+  
+  .dark-mode .submit-btn:hover {
+    background: linear-gradient(135deg, #3a4a85 0%, #2e3b6b 100%);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .edit-profile-page {
+      padding: 0;
+      align-items: stretch;
+    }
+    
+    .edit-profile-card {
+      border-radius: 0;
+      box-shadow: none;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+    
+    .edit-profile-card form {
+      grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+    
+    .cancel-btn,
+    .submit-btn {
+      width: 100%;
+    }
+  }

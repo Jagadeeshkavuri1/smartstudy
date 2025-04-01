@@ -1,0 +1,58 @@
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style the main container */
+.App {
+  background-color: black;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; /* White text for visibility on black background */
+  font-family: Arial, sans-serif;
+}
+
+/* Style the heading */
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Style the button container */
+.button-container {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+}
+
+/* Style the buttons */
+.signup-btn, .login-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-btn {
+  background-color: #4caf50; /* Green for Sign Up */
+  color: white;
+}
+
+.signup-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.login-btn {
+  background-color: #2196f3; /* Blue for Login */
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #1e88e5; /* Darker blue on hover */
+}

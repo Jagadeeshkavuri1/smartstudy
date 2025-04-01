@@ -1,0 +1,215 @@
+/* Full-screen container */
+.fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: auto;
+}
+
+/* Black heading */
+.black-heading {
+  color: #000000;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Form wrapper - forced white background in dark mode */
+.signup-form-wrapper {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #000000 !important;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Form labels - forced black color with increased specificity */
+.signup-form-wrapper .form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #000000 !important;
+  font-size: 16px;
+}
+
+/* Input fields - forced black text with increased specificity */
+.signup-form-wrapper .form-group input {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  background-color: white;
+  color: #000000 !important;
+}
+
+/* Placeholder text */
+.form-group input::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+/* Focus state */
+.form-group input:focus {
+  border-color: #4B5EAA;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(75, 94, 170, 0.2);
+}
+
+/* Error states */
+.form-group.has-error input {
+  border-color: #ff4444;
+  box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1);
+}
+
+/* Error message */
+.error-message {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: #4B5EAA;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #000000 !important;
+  font-size: 16px;
+}
+
+.login-link a {
+  color: #4B5EAA;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode overrides - ensures signup form stays white with black text */
+.dark-mode .fullscreen-container {
+  background-color: #121212;
+}
+
+.dark-mode .signup-form-wrapper {
+  background-color: white !important;
+  color: #000000 !important;
+}
+
+.dark-mode .signup-form-wrapper .form-group label {
+  color: #000000 !important;
+}
+
+.dark-mode .signup-form-wrapper .form-group input {
+  background-color: white !important;
+  color: #000000 !important;
+}
+
+.dark-mode .login-link {
+  color: #000000 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .black-heading {
+    font-size: 2rem;
+  }
+  .signup-form-wrapper {
+    padding: 30px;
+  }
+  .signup-form-wrapper .form-group label {
+    font-size: 14px;
+  }
+  .signup-form-wrapper .form-group input {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .error-message {
+    font-size: 12px;
+  }
+  .submit-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .login-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .black-heading {
+    font-size: 1.5rem;
+  }
+  .signup-form-wrapper {
+    padding: 20px;
+  }
+  .signup-form-wrapper .form-group label {
+    font-size: 13px;
+  }
+  .signup-form-wrapper .form-group input {
+    padding: 10px;
+    font-size: 13px;
+  }
+  .error-message {
+    font-size: 11px;
+  }
+  .submit-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+  .login-link {
+    font-size: 13px;
+  }
+}

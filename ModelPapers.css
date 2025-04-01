@@ -1,0 +1,95 @@
+/* src/pages/ModelPapers.css */
+.model-papers-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  
+  .model-papers-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .model-papers-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+  }
+  
+  .model-papers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .model-paper-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .model-paper-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .paper-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  
+  .paper-content {
+    flex-grow: 1;
+  }
+  
+  .paper-content h2 {
+    margin: 0 0 0.5rem;
+    color: #2c3e50;
+    font-size: 1.2rem;
+  }
+  
+  .paper-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .pdf-icon {
+    color: #F44336;
+    flex-shrink: 0;
+  }
+  
+  /* Dark mode styles */
+  .dark-mode .model-papers-title {
+    color: #e0e0e0;
+  }
+  
+  .dark-mode .model-papers-subtitle {
+    color: #bbbbbb;
+  }
+  
+  .dark-mode .model-paper-card {
+    background-color: #1e1e1e;
+  }
+  
+  .dark-mode .paper-content h2 {
+    color: #e0e0e0;
+  }
+  
+  .dark-mode .paper-content p {
+    color: #aaaaaa;
+  }
+  
+  @media (max-width: 768px) {
+    .model-papers-grid {
+      grid-template-columns: 1fr;
+    }
+  }
